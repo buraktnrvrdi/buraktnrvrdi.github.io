@@ -1,12 +1,5 @@
 import { Fragment } from 'react';
-
-const ASCII_AVATAR = `█████   ███████
-█   █      █
-█   █      █
-█████      █
-█   █      █
-█   █      █
-█████      █   `;
+import PixelAvatar from './PixelAvatar.jsx';
 
 const IDENTITY = [
   { key: 'OS', value: 'Human v1.0 (developer build)' },
@@ -40,7 +33,7 @@ export default function IdentityCard() {
 
       <div className="identity-panel">
         <div className="identity-avatar-col">
-          <pre className="ascii-avatar">{ASCII_AVATAR}</pre>
+          <PixelAvatar />
           <div className="avatar-label">burak@dev</div>
         </div>
 

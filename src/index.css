@@ -468,13 +468,16 @@ button {
   gap: 10px;
 }
 
-.ascii-avatar {
-  font-family: var(--mono);
-  font-size: 10px;
-  line-height: 1.05;
-  color: var(--green);
-  text-shadow: 0 0 6px rgba(57, 255, 122, 0.4);
-  white-space: pre;
+.pixel-avatar {
+  width: 100%;
+  max-width: 140px;
+  aspect-ratio: 1 / 1;
+  shape-rendering: crispEdges;
+  filter: drop-shadow(0 0 6px rgba(57, 255, 122, 0.5));
+}
+
+.pixel-avatar rect {
+  transition: fill 0.2s ease;
 }
 
 .avatar-label {
