@@ -14,4 +14,4 @@ npm run dev
 `main` dalına yapılan her push, GitHub Actions üzerinden otomatik olarak build alıp
 GitHub Pages'e deploy eder (bkz. `.github/workflows/deploy.yml`).
 
-Canlı adres: https://burki59.github.io
+Canlı adres: https://buraktnrvrdi.github.io

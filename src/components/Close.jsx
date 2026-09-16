@@ -2,7 +2,7 @@ import WordmarkSpread from './WordmarkSpread.jsx';
 
 const EMAIL = 'buraktanriverdicontact@gmail.com';
 const LINKEDIN = 'https://www.linkedin.com/in/burak-tanriverdi-11b6a5377/?skipRedirect=true';
-const GITHUB = 'https://github.com/burki59';
+const GITHUB = 'https://github.com/buraktnrvrdi';
 
 export default function Close() {
   return (
