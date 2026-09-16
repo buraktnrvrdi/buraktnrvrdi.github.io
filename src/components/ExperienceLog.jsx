@@ -5,7 +5,7 @@ const LOG = [
     desc: 'Bilgi İşlem Sorumlusu — fabrika ortamında IT süreçlerinden sorumlu oldum.',
   },
   {
-    time: '[2025 - now]',
+    time: '[2025 - 2026]',
     org: 'cetin-group',
     desc: 'IT Departmanı, Stajyer — envanter, destek ve iç araçlar üzerine çalışıyorum.',
   },
