@@ -12,8 +12,8 @@ export default function Hero() {
       </h1>
 
       <div className="role-line">
-        <span className="arrow">&gt;</span>Full-stack &amp; mobil geliştirici, çalışan şeyler
-        yapıyorum
+        <span className="arrow">&gt;</span>Full-stack &amp; mobil geliştirici, fikirden ürüne
+        gidiyorum
       </div>
 
       <p className="intro-text">
