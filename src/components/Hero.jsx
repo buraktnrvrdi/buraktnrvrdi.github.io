@@ -1,47 +1,47 @@
-import WordmarkSpread from './WordmarkSpread.jsx';
-
 export default function Hero() {
   return (
-    <header id="top" className="hero">
-      <div className="container">
-        <div className="hero-copy">
-          <div className="hero-kicker">Software Developer — Mobile Technologies, Trakya University</div>
-          <h1 className="hero-headline serif">
-            I build things that <em className="accent">actually ship.</em>
-          </h1>
-          <p className="hero-lede">
-            Yeni mezun bir yazılım geliştiriciyim; masaüstü, mobil ve web tarafında
-            uçtan uca ürün çıkarmayı seviyorum. Şu an Çetin Group IT departmanında
-            stajyer olarak çalışıyor, boş vakitlerimde kendi projelerimi geliştirip
-            GitHub'da paylaşıyorum.
-          </p>
-          <div className="hero-actions">
-            <a href="#work" className="btn btn-fill">
-              View Work
-            </a>
-            <a href="#contact" className="btn">
-              Contact
-            </a>
-          </div>
-        </div>
-
-        <div className="hero-specs">
-          <div className="hero-spec">
-            <div className="k mono">Location</div>
-            <div className="v mono">Tekirdağ, TR</div>
-          </div>
-          <div className="hero-spec">
-            <div className="k mono">Focus</div>
-            <div className="v mono">Full-stack · Desktop · Mobile</div>
-          </div>
-          <div className="hero-spec">
-            <div className="k mono">Status</div>
-            <div className="v mono">Intern @ Çetin Group</div>
-          </div>
-        </div>
+    <section className="shell-section" id="top">
+      <div className="prompt-line">
+        <span className="prompt-user">burak</span>
+        <span className="prompt-path">~/dev $ </span>
+        <span className="prompt-cmd">whoami --full</span>
       </div>
 
-      <WordmarkSpread text="BURAK TANRIVERDI" revealOn="load" />
-    </header>
+      <h1 className="hero-banner">
+        BURAK TANRIVERDI<span className="cursor" aria-hidden="true" />
+      </h1>
+
+      <div className="role-line">
+        <span className="arrow">&gt;</span>Full-stack &amp; mobil geliştirici, çalışan şeyler
+        yapıyorum
+      </div>
+
+      <p className="intro-text">
+        Yeni mezun bir yazılım geliştiricisiyim. Şu an <strong>Çetin Group</strong> IT
+        departmanında stajyer olarak çalışıyorum, boş vakitlerimde masaüstü, mobil ve web
+        tarafında uçtan uca projeler geliştirip <strong>GitHub</strong>'da paylaşıyorum.
+      </p>
+
+      <div className="meta-checks">
+        <span className="meta-check">
+          <span className="bracket">[x]</span>Tekirdağ, TR · UTC+3
+        </span>
+        <span className="meta-check">
+          <span className="bracket">[x]</span>Trakya Üniversitesi, 2026
+        </span>
+        <span className="meta-check">
+          <span className="bracket">[x]</span>Available for work
+        </span>
+      </div>
+
+      <div className="cta-row">
+        <a href="#work" className="btn-term btn-solid">
+          $ ls ~/projects -&gt;
+        </a>
+        <a href="#contact" className="btn-term btn-ghost">
+          ./contact --hire
+        </a>
+      </div>
+    </section>
   );
 }
