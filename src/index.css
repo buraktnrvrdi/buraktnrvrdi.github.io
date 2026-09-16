@@ -800,21 +800,33 @@ button {
 }
 
 .command-box {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: inline-block;
+  max-width: 100%;
   padding: 14px 22px;
   background: var(--black);
   border: 1px solid var(--green-faint);
   border-radius: 6px;
   box-shadow: 0 0 18px rgba(57, 255, 122, 0.15);
   font-size: 13.5px;
+  line-height: 1.8;
   color: var(--ink);
+  text-align: center;
   margin-bottom: 32px;
 }
 
 .command-box .dollar {
   color: var(--green);
+  margin-right: 8px;
+}
+
+.command-box .cursor {
+  margin-left: 8px;
+}
+
+@media (max-width: 420px) {
+  .command-box {
+    font-size: 12px;
+  }
 }
 
 .social-pills {
