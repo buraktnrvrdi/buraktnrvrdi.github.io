@@ -4,7 +4,7 @@ import TravellingMark from './components/TravellingMark.jsx';
 import Argument from './components/Argument.jsx';
 import Demonstration from './components/Demonstration.jsx';
 import Material from './components/Material.jsx';
-import Measurements from './components/Measurements.jsx';
+import ExperienceRing from './components/ExperienceRing.jsx';
 import Close from './components/Close.jsx';
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
       <Argument />
       <Demonstration />
       <Material />
-      <Measurements />
+      <ExperienceRing />
       <Close />
     </>
   );
