@@ -16,8 +16,8 @@ export default function ContactCTA() {
           Let's build <span className="highlight">something</span> together.
         </h2>
         <p className="cta-sub">
-          Yeni fırsatlara açığım — staj sonrası tam zamanlı roller ya da ilginç freelance
-          projeler için ulaşabilirsin.
+          Yeni fırsatlara açığım — staj sonrası tam zamanlı roller ya da freelance projeler
+          için ulaşabilirsin.
         </p>
 
         <a href={`mailto:${EMAIL}`} className="command-box">
