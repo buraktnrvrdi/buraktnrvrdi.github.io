@@ -1,11 +1,11 @@
 const PROJECTS = [
   {
     name: 'klipster',
-    stars: '1',
-    desc: '<strong>AI destekli</strong> video klipleme SaaS’ı — uzun videoları altyazılı dikey kliplere çevirir.',
-    tags: ['Next.js', 'FastAPI', 'Whisper', { label: 'SaaS', amber: true }],
-    source: 'https://github.com/buraktnrvrdi/Klipster',
-    demo: null,
+    stars: 'live',
+    desc: '<strong>AI destekli</strong> video klipleme SaaS’ı — uzun videoları altyazılı dikey kliplere çevirir. klipster.com.tr’de canlı yayında.',
+    tags: ['Next.js', 'FastAPI', 'Whisper', { label: 'live', amber: true }],
+    source: null,
+    demo: 'https://klipster.com.tr',
   },
   {
     name: 'bilgi-islem-app',
