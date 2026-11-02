@@ -5,6 +5,11 @@ import { WORK } from '../data.js';
 
 // Bölümlerin başladığı ilerleme değerleri (hero, hakkında, yol, işler, araçlar, iletişim)
 export const SECTION_STARTS = [0, 0.1, 0.27, 0.43, 0.8, 0.91];
+
+// .track yüksekliği (index.css'teki .track / html.mobile .track değerleriyle aynı kalmalı).
+// Mobilde her kaydırmada bir sonraki bölümde durması için snap noktalarının piksel
+// konumunu hesaplarken kullanılır.
+export const TRACK_VH = { desktop: 2400, mobile: 1500 };
 export const PROJECT_RANGE = [0.43, 0.8];
 // Proje sayısı veriden gelir; her proje için aşağıdaki kamera listelerinde bir satır olmalı.
 export const PROJECT_COUNT = WORK.projects.length;

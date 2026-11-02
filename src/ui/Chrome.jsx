@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { GITHUB, LINKEDIN, NAME, SECTIONS, UI } from '../data.js';
 import { SECTION_STARTS } from '../scene/config.js';
-import { ArrowUp, ArrowUpRight } from './icons.jsx';
+import { ArrowUp, ArrowUpRight, SoundOff, SoundOn } from './icons.jsx';
 
 const pad = (n) => String(n + 1).padStart(2, '0');
 
@@ -155,6 +155,40 @@ export function MobileMenu({ sec, onGo }) {
           {UI.close}
         </button>
       </div>
+    </div>
+  );
+}
+
+// Sağ üst: arka plan müziği aç/kapa
+export function MusicToggle() {
+  const audioRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  const toggle = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
+    } else {
+      audio.play().catch(() => {});
+      setPlaying(true);
+    }
+  };
+
+  return (
+    <div className="music-toggle">
+      <audio ref={audioRef} src="/bg-music.mp3" loop preload="none" />
+      <button
+        type="button"
+        className="music-btn"
+        data-on={playing ? '1' : '0'}
+        aria-pressed={playing}
+        aria-label={playing ? UI.musicOff : UI.musicOn}
+        onClick={toggle}
+      >
+        {playing ? <SoundOn /> : <SoundOff />}
+      </button>
     </div>
   );
 }

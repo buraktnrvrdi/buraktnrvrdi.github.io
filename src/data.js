@@ -145,4 +145,6 @@ export const UI = {
   menu: 'Bölümler',
   close: 'Kapat',
   noWebgl: '3B sahne bu cihazda çalışmıyor; içerik aşağıda.',
+  musicOn: 'Müziği kapat',
+  musicOff: 'Müziği aç',
 };

@@ -105,6 +105,7 @@ button {
   display: none;
 }
 .track {
+  position: relative;
   height: 2400vh;
   height: 2400svh;
   pointer-events: none;
@@ -112,6 +113,18 @@ button {
 html.mobile .track {
   height: 1500vh;
   height: 1500svh;
+}
+.snap-pt {
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+/* Mobilde dokunarak kaydırmak çok hassas; her kaydırma bir sonraki bölümde dursun. */
+html.mobile:not(.flow) {
+  scroll-snap-type: y mandatory;
 }
 
 /* ---------- Üst çubuk ---------- */
@@ -301,6 +314,35 @@ html.mobile .track {
 }
 .corner:hover .corner-ic {
   transform: translate(1px, -1px);
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.music-toggle {
+  display: flex;
+}
+.music-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--p62);
+  border: 1px solid rgba(242, 238, 231, 0.16);
+  background: rgba(20, 20, 20, 0.55);
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.music-btn:hover {
+  background: rgba(242, 238, 231, 0.14);
+  border-color: rgba(242, 238, 231, 0.34);
+  color: var(--paper);
+}
+.music-btn[data-on='1'] {
+  color: var(--red);
+  border-color: rgba(255, 60, 40, 0.4);
 }
 
 .scrollhint {

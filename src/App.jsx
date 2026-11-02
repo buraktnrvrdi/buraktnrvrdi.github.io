@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { NAME, UI } from './data.js';
-import { PROJECT_COUNT, SECTION_STARTS } from './scene/config.js';
-import { Counter, CornerLink, MobileMenu, Monogram, Reticle, SectionList, Strip } from './ui/Chrome.jsx';
+import { PROJECT_COUNT, SECTION_STARTS, TRACK_VH } from './scene/config.js';
+import { Counter, CornerLink, MobileMenu, Monogram, MusicToggle, Reticle, SectionList, Strip } from './ui/Chrome.jsx';
 import { About, Contact, Experience, Hero, Skills, Work } from './ui/Sections.jsx';
 import { maxScrollY, useScene } from './ui/useScene.js';
 
@@ -60,19 +60,22 @@ export default function App() {
       <header className="top">
         <Monogram />
         {!flow && <Counter sec={sec} />}
-        {flow ? (
-          <nav className="flownav" aria-label={UI.menu}>
-            {['top', 'about', 'experience', 'work', 'stack', 'contact'].map((id, i) => (
-              <a key={id} href={`#${id}`}>
-                {['Giriş', 'Hakkında', 'Yol', 'İşler', 'Araçlar', 'İletişim'][i]}
-              </a>
-            ))}
-          </nav>
-        ) : mobile ? (
-          <MobileMenu sec={sec} onGo={goTo} />
-        ) : (
-          <SectionList sec={sec} onGo={goTo} />
-        )}
+        <div className="top-right">
+          {flow ? (
+            <nav className="flownav" aria-label={UI.menu}>
+              {['top', 'about', 'experience', 'work', 'stack', 'contact'].map((id, i) => (
+                <a key={id} href={`#${id}`}>
+                  {['Giriş', 'Hakkında', 'Yol', 'İşler', 'Araçlar', 'İletişim'][i]}
+                </a>
+              ))}
+            </nav>
+          ) : mobile ? (
+            <MobileMenu sec={sec} onGo={goTo} />
+          ) : (
+            <SectionList sec={sec} onGo={goTo} />
+          )}
+          <MusicToggle />
+        </div>
       </header>
 
       {!flow && !mobile && <Strip sec={sec} />}
@@ -99,7 +102,16 @@ export default function App() {
         </p>
       )}
       {flow && mode === 'flow-nogl' && <p className="nogl-note">{UI.noWebgl}</p>}
-      {!flow && <div className="track" aria-hidden="true" />}
+      {!flow && (
+        <div className="track" aria-hidden="true">
+          {mobile &&
+            SECTION_STARTS.map((s, i) => {
+              const vh = TRACK_VH.mobile;
+              const pct = (s * (vh - 100) * 100) / vh;
+              return <span key={i} className="snap-pt" style={{ top: `${pct}%` }} />;
+            })}
+        </div>
+      )}
     </>
   );
 }
