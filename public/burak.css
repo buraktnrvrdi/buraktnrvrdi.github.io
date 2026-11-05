@@ -13,3 +13,10 @@
 @media(max-height:600px){.playlist-player iframe{min-height:152px}}
 #music.has-playlist{position:fixed;opacity:1;z-index:4}
 @media(max-width:700px){#music.has-playlist{left:14px!important;top:90px!important;width:calc(100vw - 28px)!important;height:calc(100dvh - 195px)!important;border-radius:12px}}
+/* Keep mobile text and controls crisp without expensive glass effects. */
+@media(max-width:700px),(pointer:coarse){
+  .index,.sound,.undock,.badge-nav,.cursor-label{backdrop-filter:none;background-color:#171a2bf5}
+  .index button{font-size:10px;letter-spacing:.08em;min-height:54px}
+  .ui.sig .hero-meta{letter-spacing:.12em;font-size:9px;max-width:calc(100vw - 85px);white-space:normal;line-height:1.7}
+  .ui.intro:after{background:none}
+}
