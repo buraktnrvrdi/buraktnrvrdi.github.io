@@ -1,0 +1,15 @@
+/* Content adaptation only: room composition and interface retain the reference layout. */
+.tiles{grid-template-areas:"edi resume fetch" "bandsy mentora naqsha" "lojistik lojistik lojistik"}
+.tile[data-p="lojistik"]{max-height:190px}
+.tile[data-p="lojistik"] img{object-fit:cover;object-position:50% 48%}
+.phone .pwho h3{overflow-wrap:anywhere}
+@media(max-width:640px){.flat .tiles{grid-template-areas:"edi resume" "bandsy mentora" "naqsha fetch" "lojistik lojistik"}}
+/* The original speaker's screen hosts Spotify's own playable playlist. */
+#music.has-playlist{display:block;padding:0;background:#121212;overflow:auto;font-size:16px!important}
+#music.has-playlist>.art,#music.has-playlist>.np{display:none}
+#music.has-playlist:before{content:none}
+.playlist-player{width:100%;height:100%;min-width:280px;min-height:152px}
+.playlist-player iframe{display:block;width:100%;height:100%;min-height:352px;border:0;border-radius:12px}
+@media(max-height:600px){.playlist-player iframe{min-height:152px}}
+#music.has-playlist{position:fixed;opacity:1;z-index:4}
+@media(max-width:700px){#music.has-playlist{left:14px!important;top:90px!important;width:calc(100vw - 28px)!important;height:calc(100dvh - 195px)!important;border-radius:12px}}

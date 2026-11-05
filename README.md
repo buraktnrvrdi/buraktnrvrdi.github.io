@@ -1,62 +1,22 @@
-# Burak Tanrıverdi — portfolyo
+# Burak Tanrıverdi — Çalışma Odası
 
-Kişisel portfolyo sitem. Tek sayfa, tek tam ekran Three.js sahnesi; sayfayı kaydırdıkça kamera
-karanlık bir uzayda kırmızı bir ışık çizgisini ("iplik") takip eder, iplik yeşile dönerken bölümler
-sırayla açılır: giriş, hakkında, yol, işler, araçlar, iletişim.
-
-**Canlı adres:** [buraktnrvrdi.github.io](https://buraktnrvrdi.github.io)
-
-## Tasarım
-
-- Sahne (`src/scene/`): kendi yazdığım GLSL ile köşeli kayalar, artı biçiminde ışık çizgisi, iplik
-  (CatmullRom eğrisi), toz ve bokeh parçacıkları; bloom, kenar bulanıklığı, tane ve vinyet son geçişi.
-- Kamera yolu `src/scene/config.js` içinde veri olarak tanımlı (anahtar kareler, bölüm aralıkları,
-  renk geçişi). Kamera, sahne ve metin aynı normalize scroll ilerlemesinden sürülür.
-- Arayüz neredeyse yok: sol üstte monogram, üstte sayaç, sağ üstte dikey bölüm listesi ve ilerleme
-  işaretleri, sol altta sabit metin bloğu, sağ altta bağlantı düğmesi.
-- Yazı tipi (yerel, OFL): Geist (değişken). Zemin siyah, metin sıcak beyaz.
-- Tüm metinler `src/data.js` içinde; başlıkları oradan değiştirebilirsin.
-
-## Erişilebilirlik ve yedekler
-
-- `prefers-reduced-motion`: kamera yolculuğu yok; bölümler alt alta akar, sahne her bölüm için
-  tek sabit kare olarak çizilir.
-- WebGL yoksa ya da bağlam kaybolursa: CSS ile çizilmiş sabit bir poster ve alt alta tüm içerik.
-- Mobilde (dikey kadraj) ayrı kamera anahtarları, daha az kaya, DPR ≤ 1.5 ve son geçişler kapalı.
-- Klavye: bölüm listesi gerçek düğmelerdir; "Ana içeriğe geç" bağlantısı; Escape mobil menüyü kapatır.
-- Sekme görünmezken çizim durur.
-
-## İsteğe bağlı 3B nesne
-
-`public/models/hero.glb` dosyası varsa `src/scene/HeroObject.js` onu sahneye ekler (konum ve ölçek
-`config.js` içinde `HERO_OBJECT`). Dosya yoksa sahne onsuz tam çalışır.
-
-## Hata ayıklama
-
-`?p=0.35` parametresi scroll ilerlemesini doğrudan ayarlar (0 ile 1 arası); sabit kare almak için
-kullanılır, üretimde zararsızdır.
-
-## Teknolojiler
-
-- [React](https://react.dev) + [Vite](https://vite.dev)
-- [Three.js](https://threejs.org) (MIT)
-- [@fontsource-variable/geist](https://fontsource.org/fonts/geist) (OFL-1.1)
+Referansın aynı oda sahnesi, ışık haritaları, modelleri ve kamera etkileşimleri üzerine Burak’ın portfolyo içeriği uyarlanmıştır.
 
 ## Geliştirme
 
-```bash
+```sh
 npm install
 npm run dev
-```
-
-## Build
-
-```bash
 npm run build
-npm run lint
 ```
 
-## Yayınlama
+- `index.html`: isim, özgeçmiş, altı proje, deneyim panosu ve telefon bağlantıları.
+- `public/boot.js`: başlangıç ve yerel profil soru-cevap rehberi. Harici sohbet servisi veya ziyaretçi takibi yoktur.
+- `public/burak.css`: içerik uyarlamaları.
+- `public/project-previews/`: Burak’ın projeleri için yerel önizleme görselleri.
+- `public/_astro/`, `public/models/`, `public/bake/`, `public/basis/`, `public/fonts/`, `public/sounds/`: referansın tarayıcıya sunduğu oda çalışma zamanı ve görsel/ses varlıkları. Kaynak: https://www.raomuhammadhamza.tech/ . Bu varlıkların özgün tasarımcısı Rao Muhammad Hamza’dır; Burak tarafından tasarlandıkları iddia edilmez.
+- `src/`: önceki React sürümünün kaynakları korunmuştur; mevcut giriş sayfası bunları yüklemez.
 
-`main` dalına yapılan her push, GitHub Actions üzerinden otomatik olarak build alıp
-GitHub Pages'e deploy eder (bkz. `.github/workflows/deploy.yml`).
+Gerçek bir indirilebilir CV dosyası henüz eklenmediği için CV indirme bağlantısı gösterilmez. Proje önizlemeleri kayıtlı videolar değil, proje adları ve teknolojileriyle üretilmiş yerel kapaklardır. Profil rehberi kayıtlı bilgilerle çalışır.
+
+`main` dalına gönderilen değişiklikler mevcut GitHub Actions üzerinden GitHub Pages’e yayınlanır. Bu çalışma sırasında yayın yapılmadı.
