@@ -25,4 +25,4 @@ Gerçek bir indirilebilir CV dosyası henüz eklenmediği için CV indirme bağl
 
 Mobil ekranlarda hazır ışıklandırma, en fazla 1.6 piksel oranı ve yaklaşık 30 FPS hedefi kullanılır. Başlangıç GPU kıyaslaması ve ilk shader derleme tekrarı atlanır; çözünürlük adaptasyonu yüksek yoğunluklu telefonlarda 1.25 altına inmez. Masaüstü ayarları korunur.
 
-Hazır ışık haritası beş pano kartının geometrisiyle eşleşir. Panoda iki iş deneyimi, eğitim, kişisel projeler ve teknoloji odağı bulunur. Kart sayısını veya sahne geometrisini değiştirmek hazır ışık haritasının devre dışı kalmasına neden olabilir. Böyle bir değişiklikte ışık haritası da yeniden hazırlanmalıdır. Tarayıcıda `document.documentElement.dataset.baked` değeri `true` olmalıdır.
+Hazır ışık haritası beş pano kartının geometrisiyle eşleşir. Panoda iki iş deneyimi ve eğitim bulunur. Hazır ışık haritasıyla eşleşmesi için oluşturulan iki boş geometri yuvası ışıklandırma kurulduktan sonra gizlenir ve kart gezinmesine dahil edilmez. Sahne geometrisi değiştirilirse ışık haritası da yeniden hazırlanmalıdır. Tarayıcıda `document.documentElement.dataset.baked` değeri `true` olmalıdır.
